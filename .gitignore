@@ -1,5 +1,5 @@
 test/
 django_venv/
-__pycache__/
 .vscode/
 venv/
+**/__pycache__
