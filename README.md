@@ -9,6 +9,7 @@
 -->
 
 
+[![lang ru][langru-shield]][langru-url]
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -87,7 +88,7 @@ This project was created on the basis of hakatoon. His idea is to accurately det
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+In the project, we used the following programming languages and frameworks.
 
 * [![Python][python-shields]][python-url]
 * [![HTML][html-shields]][html-url]
@@ -201,3 +202,5 @@ Thanks!
 [python-shields]: https://img.shields.io/badge/Python-35495E?style=for-the-badge&logo=html&logoColor=blue
 [html-shields]: https://img.shields.io/badge/HTML-35495E?style=for-the-badge&logo=html&logoColor=blue
 [html-url]: https://html.com/
+[langru-shield]: https://img.shields.io/badge/lang-ru-success
+[langru-url]: https://github.com/ThNikGhost/hakatoon/blob/24c64892ea45677be71546cd1d79830800713dac/README.ru.md
