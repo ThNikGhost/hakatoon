@@ -23,7 +23,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -61,13 +60,10 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -190,18 +186,16 @@ Thanks!
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[contributors-shield]: https://img.shields.io/github/contributors/ThNikGhost/hakatoon.svg?style=for-the-badge
+[contributors-url]: https://github.com/ThNikGhost/hakatoon/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ThNikGhost/hakatoon.svg?style=for-the-badge
+[forks-url]: https://github.com/ThNikGhost/hakatoon/network/members
+[stars-shield]: https://img.shields.io/github/stars/ThNikGhost/hakatoon.svg?style=for-the-badge
+[stars-url]: https://github.com/ThNikGhost/hakatoon/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ThNikGhost/hakatoon.svg?style=for-the-badge
+[issues-url]: https://github.com/ThNikGhost/hakatoon/issues
+[license-shield]: https://img.shields.io/github/license/ThNikGhost/hakatoon.svg?style=for-the-badge
+[license-url]: https://github.com/ThNikGhost/hakatoon/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
 [python-url]: https://www.python.org/
 [python-shields]: https://img.shields.io/badge/Python-35495E?style=for-the-badge&logo=html&logoColor=blue
