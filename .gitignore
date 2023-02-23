@@ -1,2 +1,5 @@
-venv/
+test/
 django_venv/
+__pycache__/
+.vscode/
+venv/
