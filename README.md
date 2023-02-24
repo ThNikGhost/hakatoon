@@ -110,17 +110,29 @@ Follow the following instructions
 
 
 1. Clone the repo
+  ```sh
+  git clone https://github.com/ThNikGhost/hakatoon.git
+  ```
+2. Сreate a virtual environment
+  ```sh
+  python -m venv django_venv
+  ```
+2.1 If the virtual environment was not activated
    ```sh
-   git clone https://github.com/ThNikGhost/hakatoon.git
+   django_venv\Scripts\activate
    ```
-2. Install requirements
+3. Install requirements
+  ```sh
+  pip install -r requirements.txt
+  ```
+3.1 If django is not installed
    ```sh
-   pip install -r requirements.txt
+   pip install django
    ```
-3. Start the server 
-   ```sh
-   python manage.py runserver
-   ```
+4. Start the server 
+  ```sh
+  python manage.py runserver
+  ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
