@@ -100,23 +100,27 @@
   ```
 2. Создать виртуальное окружение
   ```sh
-  python -m venv django_venv
+  python -m venv flask_venv
   ```
 2.1 Если не активировалась виртуальная среда
    ```sh
-   django_venv\Scripts\activate
+   flask_venv\Scripts\activate
    ```
 3. Устанавливаем зависимости
   ```sh
   pip install -r requirements.txt
   ```
-3.1 Если django не установился
-   ```sh
-   pip install django
-   ```
-4. Запустите сервер
+4. Перейдите в папку Project
   ```sh
-  python manage.py runserver
+  cd Project
+  ```
+5. Запустите сервер
+  ```sh
+  python main.py
+  ```
+6. Перейдите по ссылке 
+  ```sh
+  https://127.0.0.1:3000
   ```
 
 <p align="right">(<a href="#readme-top">наверх</a>)</p>
