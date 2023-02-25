@@ -16,7 +16,7 @@ class Main(Resource):
                 'city': res['name'],                       # Название города 
                 'temp': res['main']['temp'],               # Температура в городе
                 'temp_feels': res['main']['feels_like'],   # Температура по ощущениям
-                'wind_speed': res['wind']['speed'],        # Скорость ветра (вроде м/c)
+                'icon': res['weather'][0]['icon'],        # Скорость ветра (вроде м/c)
             }
         except KeyError:
             return 'Incorect name'    #Если неверное имя города, то возвращает эту строку 
