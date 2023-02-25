@@ -92,7 +92,8 @@ In the project, we used the following programming languages and frameworks.
 
 * [![Python][python-shields]][python-url]
 * [![HTML][html-shields]][html-url]
-
+* [![CSS][CSS-shields]][CSS-url]
+* [![JavaScript][JavaScript-shields]][JavaScript-url]
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -214,5 +215,9 @@ Thanks!
 [python-shields]: https://img.shields.io/badge/Python-35495E?style=for-the-badge&logo=html&logoColor=blue
 [html-shields]: https://img.shields.io/badge/HTML-35495E?style=for-the-badge&logo=html&logoColor=blue
 [html-url]: https://html.com/
+[CSS-shields]:https://img.shields.io/badge/CSS-35495E?style=for-the-badge&logo=html&logoColor=blue
+[CSS-url]:https://www.w3.org/Style/CSS/Overview.ru.html
+[JavaScript-shields]:https://img.shields.io/badge/JavaScript-35495E?style=for-the-badge&logo=html&logoColor=blue
+[JavaScript-url]:https://learn.javascript.ru
 [langru-shield]: https://img.shields.io/badge/lang-ru-success
 [langru-url]: README.ru.md
