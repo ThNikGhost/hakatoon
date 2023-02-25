@@ -1,6 +1,8 @@
 .vscode/
-Project/test.py
-Project/parser/
+*test.py
+*parser/
+*flask_venv/
+Project/local.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
