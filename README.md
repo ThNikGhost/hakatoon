@@ -116,23 +116,27 @@ Follow the following instructions
   ```
 2. Сreate a virtual environment
   ```sh
-  python -m venv django_venv
+  python -m venv flask_venv
   ```
 2.1 If the virtual environment was not activated
    ```sh
-   django_venv\Scripts\activate
+   flask_venv\Scripts\activate
    ```
 3. Install requirements
   ```sh
   pip install -r requirements.txt
   ```
-3.1 If django is not installed
+4 Go to the Project folder
    ```sh
-   pip install django
+   cd Project
    ```
 4. Start the server 
   ```sh
-  python manage.py runserver
+  python main.py
+  ```
+6. Follow this link
+  ```sh
+  https://127.0.0.1:3000
   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
