@@ -76,7 +76,8 @@
 
 * [![Python][python-shields]][python-url]
 * [![HTML][html-shields]][html-url]
-
+* [![CSS][CSS-shields]][CSS-url]
+* [![JavaScript][JavaScript-shields]][JavaScript-url]
 <p align="right">(<a href="#readme-top">наверх</a>)</p>
 
 
@@ -204,5 +205,9 @@
 [python-shields]: https://img.shields.io/badge/Python-35495E?style=for-the-badge&logo=html&logoColor=blue
 [html-shields]: https://img.shields.io/badge/HTML-35495E?style=for-the-badge&logo=html&logoColor=blue
 [html-url]: https://html.com/
+[CSS-shields]:https://img.shields.io/badge/CSS-35495E?style=for-the-badge&logo=html&logoColor=blue
+[CSS-url]:https://www.w3.org/Style/CSS/Overview.ru.html
+[JavaScript-shields]:https://img.shields.io/badge/JavaScript-35495E?style=for-the-badge&logo=html&logoColor=blue
+[JavaScript-url]:https://learn.javascript.ru
 [langen-shield]: https://img.shields.io/badge/lang-en-red
 [langen-url]: README.md
