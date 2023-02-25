@@ -205,4 +205,4 @@
 [html-shields]: https://img.shields.io/badge/HTML-35495E?style=for-the-badge&logo=html&logoColor=blue
 [html-url]: https://html.com/
 [langen-shield]: https://img.shields.io/badge/lang-en-red
-[langen-url]: https://github.com/ThNikGhost/hakatoon/blob/d59f16d121d229f0686c0550a030b2b1162de30a/README.md
+[langen-url]: README.md
