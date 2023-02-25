@@ -215,4 +215,4 @@ Thanks!
 [html-shields]: https://img.shields.io/badge/HTML-35495E?style=for-the-badge&logo=html&logoColor=blue
 [html-url]: https://html.com/
 [langru-shield]: https://img.shields.io/badge/lang-ru-success
-[langru-url]: https://github.com/ThNikGhost/hakatoon/blob/24c64892ea45677be71546cd1d79830800713dac/README.ru.md
+[langru-url]: README.ru.md
