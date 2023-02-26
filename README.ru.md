@@ -60,7 +60,8 @@
 <!-- ABOUT THE PROJECT -->
 ## О проекте
 
-[![ДОБАВИТЬ СКРИНШОТ][product-screenshot]](https://example.com)
+![image](https://user-images.githubusercontent.com/126135461/221398512-755b145b-8c4d-4707-9f68-f1cc6c3c1ff5.png)
+
 
 Этот проект был создан на основе хакатона. Его идея состоит в том, чтобы точно определять погоду в текущий час.
 
