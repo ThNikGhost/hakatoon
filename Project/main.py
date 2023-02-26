@@ -91,7 +91,7 @@ class WorkDataBase(Resource):
             if city_name in kz_text:
                 index = kz_text.index(city_name)
                 city_name = ru_text[index]
-            cur.execute(f"DELETE FROM City_saveWHERE Name = '{city_name}'")
+            cur.execute(f"DELETE FROM City_save WHERE Name = '{city_name}'")
             con.commit()
 
 
