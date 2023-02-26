@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погода в Казахстане</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <a href="#" class="nav__logo">
+            <img src="../static/img/logo.png" alt="">
+            <img src="../static/img/CaWeather.svg" alt="" />
+          </a>
+
+          <div class="switch-lang">
+            <a class="lang kz" href="indexkz.html" style="opacity: 0.5;">Қаз</a>
+            <a class="lang ru" href="/" style="pointer-events: none;">Рус</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div class="main__inner">
+          <div class="search-container">
+            <div class="search-box">
+              <img
+                class="search-box__icon"
+                src="../static/img/search.png"
+                alt="поиск"
+              />
+              <input
+                type="text"
+                class="search-box__input"
+                placeholder="Введите город"
+              />
+              <img
+                class="search-box__icon-close"
+                src="../static/img/close-icon.svg"
+                alt=""
+              />
+            </div>
+            <div class="search-result">
+              <ul class="search-result__list"></ul>
+            </div>
+          </div>
+
+          <div class="result">
+            <p class="result__title">НЕДАВНИЕ МЕСТОПОЛОЖЕНИЯ</p>
+            <ul class="result__items"></ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- <script src="script.js"></script> -->
+    <script
+      type="module"
+      src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+  </body>
+</html>
