@@ -76,7 +76,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![ДОБАВИТЬ СКРИНШОТ][product-screenshot]](https://example.com)
+![image](https://user-images.githubusercontent.com/126135461/221398512-755b145b-8c4d-4707-9f68-f1cc6c3c1ff5.png)
 
 This project was created on the basis of hakatoon. His idea is to accurately determine the weather at the current hour.
 
