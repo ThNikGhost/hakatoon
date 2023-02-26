@@ -60,7 +60,9 @@
 <!-- ABOUT THE PROJECT -->
 ## О проекте
 
-![image](https://user-images.githubusercontent.com/126135461/221398512-755b145b-8c4d-4707-9f68-f1cc6c3c1ff5.png)
+![image](https://user-images.githubusercontent.com/126135461/221419131-a0023acb-a239-4187-8f6a-53d113cdb21f.png)
+![image](https://user-images.githubusercontent.com/126135461/221419026-2e365f85-6cab-4464-bc12-3bc8c1a623e0.png)
+
 
 
 Этот проект был создан на основе хакатона. Его идея состоит в том, чтобы точно определять погоду в текущий час.
@@ -148,7 +150,7 @@
 - [ ] Поддержка нескольких языков.
     - [ ] Английский
     - [x] Русский
-    - [ ] Казахский
+    - [x] Казахский
 
 Смотрите [открытые выпуски](https://github.com/ThNikGhost/hakatoon/issues) для получения полного списка предлагаемых функций (и известных проблем).
 
