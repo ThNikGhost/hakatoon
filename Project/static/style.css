@@ -343,3 +343,7 @@ body {
 .delet-icon:active{
   transform: scale(0.9);
 }
+
+.github{
+  margin-right: 20px ;
+}
