@@ -81,7 +81,7 @@
 
 This project was created on the basis of hakatoon. His idea is to accurately determine the weather at the current hour.
 
-
+Quick access to <a href=http://thghost.pythonanywhere.com/>CaWeather</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
