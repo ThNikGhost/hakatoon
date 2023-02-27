@@ -30,7 +30,7 @@ export default function WeatherCity(city, cityName) {
         input.placeholder = "Бұл қала қосылып қойған";
 
         setTimeout(() => {
-          input.placeholder = "Қалаға кіріңіз";
+          input.placeholder = "Қаланы енгізіңіз";
         }, 1000);
         return;
       }
@@ -94,7 +94,7 @@ function CreateWeatherWrapper(city) {
 function CreateRealFeel(city) {
   let real_feel = document.createElement("div");
   real_feel.classList.add("real-feel");
-  real_feel.textContent = "Сияқты";
+  real_feel.textContent = "Сезіледі";
   let feel_value = document.createElement("span");
   feel_value.classList.add("real-feel__value");
   feel_value.textContent = " " + Math.floor(city.temp_feels) + "°";
