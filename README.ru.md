@@ -60,8 +60,8 @@
 <!-- ABOUT THE PROJECT -->
 ## О проекте
 
-![image](https://user-images.githubusercontent.com/126135461/221419131-a0023acb-a239-4187-8f6a-53d113cdb21f.png)
-![image](https://user-images.githubusercontent.com/126135461/221419026-2e365f85-6cab-4464-bc12-3bc8c1a623e0.png)
+![photo_5472429209105318180_y](https://user-images.githubusercontent.com/126135461/221745934-bb3f820e-b5b5-41d8-b030-59856e59462f.jpg)
+![photo_5472429209105318182_y](https://user-images.githubusercontent.com/126135461/221746039-165fe8e4-d254-4c5e-8a46-8ece99278039.jpg)
 
 
 
