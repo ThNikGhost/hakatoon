@@ -1,157 +1,92 @@
-from flask import json, Response, render_template, Flask
+from flask import render_template, Flask, jsonify
 from flask_restful import Api, Resource
-
 import requests
-import sqlite3 as sq
+from function import *
 
 app = Flask(__name__)
 api = Api()
 url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=3fd71f50684a58f9c310b7a4e5df243f'
 
-
-def get_list_db(data: list):
-    new_list = []
-    for i in data:
-        for k in i:
-            new_list.append(k)
-    return new_list
-
-
-with sq.connect('City.sqlite3') as con:
-    cur = con.cursor()
-    cur.execute('SELECT kz_name FROM City_name')
-    kz_text = get_list_db(cur.fetchall())
-    cur.execute('SELECT ru_name FROM City_name')
-    ru_text = get_list_db(cur.fetchall())
-
-
-class Main(Resource):
-    def get(self, city):
-        if city in kz_text:
-            index = kz_text.index(city)
-            city = ru_text[index]
-        res = requests.get(url.format(city)).json()
-        city_info = {
-            'city': res['name'],
-            'temp': res['main']['temp'],
-            'temp_feels': res['main']['feels_like'],
-            'icon': res['weather'][0]['icon'],
-        }
-        return city_info
-
-
 class WorkDataBase(Resource):
     def get(self, text):
-        lang = text
-        with sq.connect('City.sqlite3') as con:
-            cur = con.cursor()
-            cur.execute(f'SELECT {lang}_name FROM City_name')
-            data_list = get_list_db(cur.fetchall())
-            json_string = json.dumps(data_list, ensure_ascii=False)
-            response = Response(json_string, content_type="application/json; charset=utf-8")
-        return response
-
+        data_list = select(f'{text}_name', 'City_name')
+        data_list = get_list_db(data_list)
+        return utf8(data_list)
+    
     def post(self, text):
-        name_city = text
-
-        if name_city == 'x':  # Проверка равна ли строка 'x' если да, то просто возвращает все данные
-            with sq.connect('City.sqlite3') as con:
-                cur = con.cursor()
-                cur.execute('SELECT Name FROM City_save')
-                return cur.fetchall()
-
-        with sq.connect('City.sqlite3') as con:
-            cur = con.cursor()
-            cur.execute('SELECT Name FROM City_save')
-            data = get_list_db(cur.fetchall())
-
-            if name_city in data:  # Проверяет, есть ли введённая строка уже в БД
-                return data
-
-            cur.execute('SELECT rowid FROM City_save')
-            data_new = get_list_db(cur.fetchall())
-
-            if len(data) <= 2:
-                cur.execute(f"INSERT INTO City_save (Name) VALUES ('{name_city}')")
-                con.commit()
-            elif len(data) > 2:
-                cur.execute(f"DELETE FROM City_save WHERE rowid = '{data_new[0]}'")
-                con.commit()
-                cur.execute(f"INSERT INTO City_save (Name) VALUES ('{name_city}')")
-                con.commit()
-
-            cur.execute(f"SELECT Name FROM City_save")
-            data_list = get_list_db(cur.fetchall())
-            return data_list
-
+        if len(text) == 1:
+            data = select('Name', 'City_save', True)
+            match text:
+                case 'r':
+                    return utf8(data)
+                case 'k':
+                    some_list = []
+                    for i in data:
+                        mew = trans_city(i, 'kz')
+                        some_list.append(mew)
+                    return utf8(some_list)     
+                
+        elif len(text) != 1:
+            data = select('Name', 'City_save', True)
+            text_ru = trans_city(text[:-1], 'ru')
+            if text_ru in data:
+                return utf8(data)
+            rowid = select('rowid', 'City_save', True)
+            if len(data) < 3:
+                insert(text_ru)
+            else:
+                delete(rowid[0], 'rowid')
+                insert(text_ru)
+            match text[-1]:
+                case 'r':
+                    return utf8(select('Name', 'City_save', True))
+                case 'k':
+                    mew = select('Name', 'City_save', True)
+                    new_list = []
+                    for i in mew:
+                        new_list.append(trans_city(i, 'kz'))
+                    return utf8(new_list)
+                
     def delete(self, text):
-        city_name = text
-        with sq.connect('City.sqlite3') as con:
-            cur = con.cursor()
-            if city_name in kz_text:
-                index = kz_text.index(city_name)
-                city_name = ru_text[index]
-            cur.execute(f"DELETE FROM City_save WHERE Name = '{city_name}'")
-            con.commit()
+        text = trans_city(text[:-1], 'ru')
+        delete(text, 'Name')
+        return None
 
+@app.route('/api/text/<string:lang>')
+def get_text(lang):
+    data = select(lang, 'lang_text', True)
+    json_data = {
+        "title": data[5],
+        "city-has-already": data[6],
+        "enter-city": data[0],
+        "Kazakhstan": data[2],
+        "feels": data[4],
+        "locations": data[3],
+        "documentation": data[1]
+    }
+    return jsonify(json_data)
 
-class KzData(Resource):
-    def post(self, text):
-        name_city_kz = text
-
-        if name_city_kz == 'x':  # Проверка равна ли строка 'x' если да, то просто возвращает все данные
-            with sq.connect('City.sqlite3') as con:
-                cur = con.cursor()
-                cur.execute('SELECT Name FROM City_save')
-                db_text = get_list_db(cur.fetchall())
-                new_list = []
-                for i in db_text:
-                    index = ru_text.index(i)
-                    new_text = kz_text[index]
-                    new_list.append(new_text)
-                return new_list
-        with sq.connect('City.sqlite3') as con:
-            cur = con.cursor()
-            cur.execute('SELECT Name FROM City_save')
-            db_text = get_list_db(cur.fetchall())
-            cur.execute('SELECT rowid FROM City_save')
-            rowid = get_list_db(cur.fetchall())
-
-            index = kz_text.index(name_city_kz)
-            name_city_ru = ru_text[index]
-
-            if name_city_ru in db_text:  # Проверяет, есть ли введённая строка уже в БД
-                return db_text
-
-            if len(db_text) <= 2:
-                cur.execute(f"""INSERT INTO City_save (Name) VALUES ('{name_city_ru}')""")
-                con.commit()
-            elif len(db_text) > 2:
-                cur.execute(f"DELETE FROM City_save WHERE rowid = '{rowid[0]}';")
-                con.commit()
-                cur.execute(f"""INSERT INTO City_save (Name) VALUES ('{name_city_ru}')""")
-                con.commit()
-
-            cur.execute(f"""SELECT Name FROM City_save""")
-            data_list = get_list_db(cur.fetchall())
-            new_list = []
-            for i in data_list:
-                index = ru_text.index(i)
-                name_city_kz = kz_text[index]
-                new_list.append(name_city_kz)
-            return new_list
+@app.route('/api/weather/<string:city>')
+def get_weather(city):
+    city = trans_city(city, 'ru')
+    res = requests.get(url.format(city)).json()
+    city_info = {
+        'city': res['name'],
+        'temp': res['main']['temp'],
+        'temp_feels': res['main']['feels_like'],
+        'icon': res['weather'][0]['icon'],
+    }
+    return city_info
 
 
 @app.route('/')
 def index():
     return render_template('index.html')
-@app.route('/indexkz.html')
-def indexkz():
-    return render_template('indexkz.html')
+# @app.route('/indexkz.html')
+# def indexkz():
+#     return render_template('indexkz.html')
 
-api.add_resource(Main, '/api/main/<string:city>')
-api.add_resource(WorkDataBase, '/api/cities/<string:text>')
-api.add_resource(KzData, '/api/cities/kz/<string:text>')
+api.add_resource(WorkDataBase, '/api/db/<string:text>')
 app.config['JSON_AS_UTF-8'] = False
 api.init_app(app)
 
